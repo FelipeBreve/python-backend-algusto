@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-04 15:11-0300\n"
+"POT-Creation-Date: 2018-07-04 15:47-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,10 +16,26 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: exemplo/templates/home.html:7
+#: exemplo/templates/home.html:4
+msgid "home_title"
+msgstr "Message App"
+
+#: exemplo/templates/home.html:28
 msgid "hello"
 msgstr "Hello"
 
-#: exemplo/templates/home.html:8
+#: exemplo/templates/home.html:29
 msgid "welcome"
 msgstr "Welcome to the django project Manitos"
+
+#: exemplo/templates/home.html:35
+msgid "author"
+msgstr "Author"
+
+#: exemplo/templates/home.html:38
+msgid "msg"
+msgstr "Message"
+
+#: exemplo/templates/home.html:41
+msgid "send"
+msgstr "Send"
