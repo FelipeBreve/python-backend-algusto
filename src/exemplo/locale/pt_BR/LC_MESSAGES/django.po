@@ -19,7 +19,7 @@ msgstr ""
 
 #: exemplo/templates/home.html:4
 msgid "home_title"
-msgstr "App de Mensagems"
+msgstr "App de Mensagens"
 
 #: exemplo/templates/home.html:28
 msgid "hello"

@@ -5,21 +5,28 @@
 
         <style>
 
-        body {
-            font-family: sans-serif;
-        }
+body {
+    font-family: sans-serif;
+    max-width: 320px;
+    margin: 0 auto;
+}
 
         .form {
-            max-width: 320px;
             margin: 64px auto;
-                border: 1px solid gray;
-                    padding: 14px;
+            border: 1px solid gray;
+            padding: 14px;
         }
 
         .form > form > input {
             margin-bottom: 16px;
-                width: 100%;
-                        font-size: 18px;
+            width: 100%;
+            font-size: 18px;
+        }
+
+        .msg {
+            margin: 16px auto;
+            border: 1px solid gray;
+            padding: 14px;
         }
         </style>
     </head>
@@ -41,5 +48,14 @@
                 <input type="submit" value="{% trans "send" %}">
             </form>
         </div>
+
+        {% for msg in msgs %}
+        <div class="msg">
+            <h2>
+                {{ msg.author }}
+            </h2>
+            <p>{{ msg.content|truncatewords:"100" }}</p>
+        </div>
+        {% endfor %}
     </body>
 </html>

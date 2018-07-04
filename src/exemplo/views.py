@@ -10,18 +10,24 @@ from django.template import RequestContext
 # Create your views here.
 
 def home(req):
-    if req.method == 'GET':
-        return render(req, 'home.html');
-    elif req.method == 'POST':
+    if req.method == 'POST':
         p = req.POST
-        author = p['author']
-        msg = p['msg']
+        req_author = p['author']
+        req_msg = p['msg']
 
-        if (author and msg):
-            # TODO: Continuar essa bagaça...
-            print("Fine!");
+        if (req_author and req_msg):
+            msg = Msg()
+            max_content = Msg._meta.get_field('content').max_length
+            max_author = Msg._meta.get_field('author').max_length
 
-        return render(req, 'home.html');
+            msg.content = req_msg[0:max_content:]
+            msg.author = req_author[0:max_content:]
+
+            msg.save()
+
+    context = {'msgs' : Msg.objects.all()}
+
+    return render(req, 'home.html', context);
 
 # def home(request):
 #     data = {'name' : 'felipe', 'location': 'Brazil'}
