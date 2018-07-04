@@ -1,11 +1,11 @@
 <html>
+    {% load i18n %}
     <head>
-
     </head>
     <body>
         <div>
-            <center><h1>Olá</h1></center>
-            <center>{{ bem_vindo }}</center>
+            <center><h1>{% trans "hello" %}</h1></center>
+            <center>{% trans "welcome" %}</center>
         </div>
     </body>
 </html>

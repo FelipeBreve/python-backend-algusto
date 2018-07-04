@@ -3,13 +3,12 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render
 from django.http import JsonResponse
+from django.utils.translation import gettext as _
 
 # Create your views here.
 
-
 def home(request):
-    context = {'bem_vindo' : 'Bem vindo ao projeto de python Manitos'}
-    return render(request, 'home.html', context);
+    return render(request, 'home.html');
 
 # def home(request):
 #     data = {'name' : 'felipe', 'location': 'Brazil'}
