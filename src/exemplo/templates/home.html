@@ -1,11 +1,61 @@
 <html>
+    {% load i18n %}
     <head>
+        <title>{% trans "home_title" %}</title>
 
+        <style>
+
+body {
+    font-family: sans-serif;
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+        .form {
+            margin: 64px auto;
+            border: 1px solid gray;
+            padding: 14px;
+        }
+
+        .form > form > input {
+            margin-bottom: 16px;
+            width: 100%;
+            font-size: 18px;
+        }
+
+        .msg {
+            margin: 16px auto;
+            border: 1px solid gray;
+            padding: 14px;
+        }
+        </style>
     </head>
     <body>
         <div>
-            <center><h1>Olá</h1></center>
-            <center>{{ bem_vindo }}</center>
+            <center><h1>{% trans "hello" %}</h1></center>
+            <center>{% trans "welcome" %}</center>
         </div>
+        <div class="form">
+            <form action="/" method="post">
+                {% csrf_token %} 
+
+                <label for="author">{% trans "author" %}:</label>
+                <input type="text" id="author" name="author"><br>
+
+                <label for="msg">{% trans "msg" %}:</label>
+                <input type="text" id="msg" name="msg"><br>
+
+                <input type="submit" value="{% trans "send" %}">
+            </form>
+        </div>
+
+        {% for msg in msgs %}
+        <div class="msg">
+            <h2>
+                {{ msg.author }}
+            </h2>
+            <p>{{ msg.content|truncatewords:"100" }}</p>
+        </div>
+        {% endfor %}
     </body>
 </html>
